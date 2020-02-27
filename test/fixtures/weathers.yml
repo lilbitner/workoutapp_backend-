@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  city_name: MyString
+  day1_weather: MyString
+  day2_weather: MyString
+  day3_weather: MyString
+  day4_weather: MyString
+  day5_weather: MyString
+
+two:
+  city_name: MyString
+  day1_weather: MyString
+  day2_weather: MyString
+  day3_weather: MyString
+  day4_weather: MyString
+  day5_weather: MyString
