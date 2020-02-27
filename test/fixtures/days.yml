@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  workout: one
+  user: one
+  day_name: MyString
+
+two:
+  workout: two
+  user: two
+  day_name: MyString
