@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2020_02_27_223443) do
     t.bigint "workout_id", null: false
     t.bigint "user_id", null: false
     t.string "day_name"
+    t.integer "weather_temp"
+    t.string "weather_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_days_on_user_id"
