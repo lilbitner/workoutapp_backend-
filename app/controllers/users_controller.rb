@@ -6,4 +6,13 @@ class UsersController < ApplicationController
         )
         render json: @user 
     end 
+
+    def index 
+        begin 
+        authenticate 
+        @user = User.all 
+
+        render json: @user
+        rescue 
+    end 
 end
