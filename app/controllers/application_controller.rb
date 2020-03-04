@@ -13,6 +13,8 @@ class ApplicationController < ActionController::API
                 payload = JWT.decode(token, secret)[0]
 
                 @user = User.find(payload["id"])
+
+                render json: @user
             rescue 
                 render json: {message: "GO AWAY!"}, status: :unauthorized
             end 

@@ -1,18 +1,36 @@
 class UsersController < ApplicationController
     def create 
-        @user = User.create( 
-            username: params[:username],
-            password: params[:password]
-        )
-        render json: @user 
+        @user = User.new(user_params) 
+        if @user.save 
+            render json: @user, {message: "User created"} status: :created
+        else 
+            render json: {error: "Please make password at least 7 characters"}, status: :bad_request
+        end 
     end 
 
-    def index 
+    def index
+        begin 
+        authenticate
+        @users = User.all 
+
+        render json: @users
+        rescue 
+        end
+       
+    end 
+
+    def show 
         begin 
         authenticate 
-        @user = User.all 
-
-        render json: @user
+        @user = User.find_by(params[:id])
+        render json: @user 
         rescue 
+        end 
+    end 
+
+    private 
+
+    def user_params 
+        params.permit(:username, :password)
     end 
 end
