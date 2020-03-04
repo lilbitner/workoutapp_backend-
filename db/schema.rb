@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_223443) do
     t.string "place"
     t.string "body_part"
     t.string "info"
+    t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

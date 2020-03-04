@@ -5,6 +5,8 @@ class CreateWorkouts < ActiveRecord::Migration[6.0]
       t.string :place
       t.string :body_part
       t.string :info
+      t.string :title 
+    
 
       t.timestamps
     end
