@@ -9,13 +9,13 @@ class UsersController < ApplicationController
     end 
 
     def index
-        begin 
-        authenticate
+        # begin 
+        # authenticate
         @users = User.all 
 
-        render json: @users
-        rescue 
-        end
+        render json: @users, include: :workouts
+        # rescue 
+        # end
        
     end 
 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
         begin 
         authenticate 
         @user = User.find_by(params[:id])
-        render json: @user 
+        render json: @user, include: :workouts
         rescue 
         end 
     end 

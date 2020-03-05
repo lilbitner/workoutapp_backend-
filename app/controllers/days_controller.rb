@@ -1,19 +1,24 @@
 class DaysController < ApplicationController
     def create
-        @day = Day.create(
-            day_name: params[:day_name],
-            workout_id: params[:workout_id],
-            user_id: params[:user_id], 
-            split_number: params[:split_number]
-        )
+        @array = []
+        params[:workoutArrayKey].each do |object| 
+            @workout = Workout.find_by(title: object["workoutTitle"])
+         @day = Day.create(
+            day_name: object["day_name"],
+            workout_id: @workout.id,
+            user_id: object["user_id"], 
+            split_number: object["split_number"]
+         )
+        @array.push(@day)
+        end 
 
-        render json: @day 
+        render json:  @array 
     end 
 
+    def index 
+        @days = Day.all 
 
-    private 
-
-    def days_params 
-        params.permit(:day_name, :workout_id, :user_id, :workout_number)
+        render json: @days 
     end 
+
 end

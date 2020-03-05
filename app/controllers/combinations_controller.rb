@@ -1,25 +1,30 @@
 class CombinationsController < ApplicationController
 
     def index 
-        params[:workoutIdArrayKey].each do {|id| }
         @combinations = Combination.all 
 
-        render json: @combinations
+        render json: @combinations, include: :exercise
+    end 
+
+    def show 
+        @combination = Combination.find_by(params[:id])
+
+        render json: @combination, include: :exercise
     end 
     
     def create 
-        @combination = 
-        {(params[:workoutIdArrayKey]).each do {|id| params[:workout_id] = id}
-            end 
-        (params[:exerciseIdArrayKey]).each do {|id| params[:exercise_id] = id} 
-            end 
-        Combination.create(combination_params)}
-
-        render json: @combination 
+    @array = []
+    params[:exerciseWorkoutArrayKey].each do |object|
+        @workout = Workout.find_by(title: object["workoutTitle"])
+        @combination = Combination.create( 
+            exercise_id: object["exerciseId"],
+            workout_id: @workout.id 
+        )
+        @array.push(@combination)
+        puts @workout
     end 
 
-    private 
-    def combination_params 
-        params.permit(:workout_id, :exercise_id)
+    render json: @array 
     end 
+
 end 

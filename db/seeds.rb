@@ -16,15 +16,17 @@
 # workoutcut3 = Workout.create(title: 'LISS', cut_or_bulk: 'Cut')
 # workoutcut4 = Workout.create(title: 'HIIT', cut_or_bulk: 'Cut')
 # workoutcut5 = Workout.create(title: 'Cardio', cut_or_bulk: 'Cut')
-
+Combination.destroy_all 
+Day.destroy_all 
 Exercise.destroy_all
 Workout.destroy_all 
+User.destroy_all 
 
 workoutbulk1 = Workout.create(title: 'Leg Day')
-workoutbulk2 = Workout.create(title: 'Arm Day')
-workoutbulk3 = Workout.create(title: 'LISS')
-workoutbulk4 = Workout.create(title: 'Leg Day')
-workoutbulk5 = Workout.create(title: 'Arm Day')
+workoutbulk2 = Workout.create(title: 'Upper Body Day')
+workoutbulk3 = Workout.create(title: 'Low Intensity Steady State Training')
+workoutbulk4 = Workout.create(title: 'High Intensity Interval Training')
+workoutbulk5 = Workout.create(title: 'Cardio Training')
 
 # workoutcut1 = Workout.create(title: 'Leg Day', cut_or_bulk: 'Cut')
 # workoutcut2 = Workout.create(title: 'Arm Day', cut_or_bulk: 'Cut')
