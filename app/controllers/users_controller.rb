@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     def create 
         @user = User.new(user_params) 
         if @user.save 
-            render json: @user, {message: "User created"} status: :created
+            render json: {user: @user}, status: :created
         else 
             render json: {error: "Please make password at least 7 characters"}, status: :bad_request
         end 
