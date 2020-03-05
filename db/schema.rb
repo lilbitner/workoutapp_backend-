@@ -10,21 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_223443) do
+ActiveRecord::Schema.define(version: 2020_03_04_105050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "combinations", force: :cascade do |t|
+    t.bigint "workout_id", null: false
+    t.bigint "exercise_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["exercise_id"], name: "index_combinations_on_exercise_id"
+    t.index ["workout_id"], name: "index_combinations_on_workout_id"
+  end
 
   create_table "days", force: :cascade do |t|
     t.bigint "workout_id", null: false
     t.bigint "user_id", null: false
     t.string "day_name"
-    t.integer "weather_temp"
-    t.string "weather_description"
+    t.string "split_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_days_on_user_id"
     t.index ["workout_id"], name: "index_days_on_workout_id"
+  end
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "category"
+    t.string "place"
+    t.string "body_part"
+    t.string "info"
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -35,15 +53,13 @@ ActiveRecord::Schema.define(version: 2020_02_27_223443) do
   end
 
   create_table "workouts", force: :cascade do |t|
-    t.string "category"
-    t.string "place"
-    t.string "body_part"
-    t.string "info"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "combinations", "exercises"
+  add_foreign_key "combinations", "workouts"
   add_foreign_key "days", "users"
   add_foreign_key "days", "workouts"
 end
