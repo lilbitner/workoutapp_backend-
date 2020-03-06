@@ -2,10 +2,10 @@ class DaysController < ApplicationController
     def create
         @array = []
         params[:workoutArrayKey].each do |object| 
-            @workout = Workout.find_by(title: object["workoutTitle"])
+            # @workout = Workout.find_by(title: object["workoutTitle"])
          @day = Day.create(
             day_name: object["day_name"],
-            workout_id: @workout.id,
+            workout_id: object["workoutId"],
             user_id: object["user_id"], 
             split_number: object["split_number"]
          )
@@ -18,7 +18,7 @@ class DaysController < ApplicationController
     def index 
         @days = Day.all 
 
-        render json: @days 
+        render json: @days, include: :workout
     end 
 
 end

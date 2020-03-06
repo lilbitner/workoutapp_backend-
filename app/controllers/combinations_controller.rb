@@ -3,13 +3,13 @@ class CombinationsController < ApplicationController
     def index 
         @combinations = Combination.all 
 
-        render json: @combinations, include: :exercises
+        render json: @combinations
     end 
 
     def show 
         @combination = Combination.find_by(params[:id])
 
-        render json: @combination, include: :exercises
+        render json: @combination
     end 
     
     def create 
