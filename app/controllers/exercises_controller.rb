@@ -1,5 +1,11 @@
 class ExercisesController < ApplicationController
 
+    def index
+        @exercise = Exercise.all 
+
+        render json: @exercise
+    end 
+    
     def create_bulk_split 
         @leg_lift_1 = (Exercise.pluck(:body_part, :category)
         Exercise.where(body_part:'Legs', category:'weights')).shuffle[0...5]
