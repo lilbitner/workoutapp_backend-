@@ -8,24 +8,25 @@ class UsersController < ApplicationController
         end 
     end 
 
-    def index
-        # begin 
-        # authenticate
-        @users = User.all 
+    # def index
+    #     # begin 
+    #     # authenticate
+    #     @users = User.all 
 
-        render json: @users, include: :workouts
-        # rescue 
-        # end
+    #     render json: @users, include: :workouts
+    #     # rescue 
+    #     # end
        
-    end 
+    # end 
 
     def show 
-        begin 
-        authenticate 
+        # begin 
+        # authenticate 
         @user = User.find_by(params[:id])
-        render json: @user, include: :workouts
-        rescue 
-        end 
+        
+        render json: @user, include: [:workouts]
+        # rescue 
+        # end 
     end 
 
     private 
