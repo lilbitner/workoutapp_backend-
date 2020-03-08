@@ -44,17 +44,6 @@ Exercise.create(title: 'Upper Body Day', place: 'Indoor', category: 'weights', b
 Exercise.create(title: 'Upper Body Day', place: 'Indoor', category: 'weights', body_part: 'Arms', info: '4x8 dumbell row', workout: workout2)
 Exercise.create(title: 'Upper Body Day', place: 'Indoor', category: 'weights', body_part: 'Arms', info: '4x10 pullup', workout: workout2)
 
-# Exercise.create(place: 'Both', category: 'weights', body_part: 'Abs', info: '4x20 russian twists')
-# Exercise.create(place: 'Both', category: 'weights', body_part: 'Abs', info: '4x30 sec planks')
-# Exercise.create(place: 'Both', category: 'weights', body_part: 'Abs', info: '4x20 shoulder taps')
-# Exercise.create(place: 'Both', category: 'weights', body_part: 'Abs', info: '4x40 bicycles')
-# Exercise.create(place: 'Both', category: 'weights', body_part: 'Abs', info: '4x30 sec side planks')
-# Exercise.create(place: 'Both', category: 'weights', body_part: 'Abs', info: '4x20 toe touches')
-# Exercise.create(place: 'Both', category: 'weights', body_part: 'Abs', info: '4x20 plank pike tap')
-# Exercise.create(place: 'Both', category: 'weights', body_part: 'Abs', info: '4x20 bird dog crunch')
-# Exercise.create(place: 'Both', category: 'weights', body_part: 'Abs', info: '4x30 penguins')
-# Exercise.create(place: 'Both', category: 'weights', body_part: 'Abs', info: '4x12 dead bugs')
-# Exercise.create(place: 'Both', category: 'weights', body_part: 'Abs', info: '4x15 plank updown')
 
 Exercise.create(title: 'High Intensity Interval Training', place: 'Both', category: 'HIIT', body_part: 'Legs', info: '5x20 jump squats', workout: workout4)
 Exercise.create(title: 'High Intensity Interval Training', place: 'Both', category: 'HIIT', body_part: 'Fullbody', info: '5x12 burpees', workout: workout4)

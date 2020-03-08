@@ -2,7 +2,6 @@ class DaysController < ApplicationController
     def create
         @array = []
         params[:workoutArrayKey].each do |object| 
-            # @workout = Workout.find_by(title: object["workoutTitle"])
          @day = Day.create(
             day_name: object["day_name"],
             workout_id: object["workoutId"],
