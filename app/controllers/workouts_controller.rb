@@ -2,7 +2,7 @@ class WorkoutsController < ApplicationController
     def index 
         @workouts = Workout.all 
 
-        render json: @workouts, include: [:combinations, :exercises]
+        render json: @workouts, include: :exercises
     end 
 
     def show 

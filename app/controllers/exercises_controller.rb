@@ -1,9 +1,28 @@
 class ExercisesController < ApplicationController
 
     def index
-        @exercise = Exercise.all 
+        @exercises = Exercise.all 
 
-        render json: @exercise
+        render json: @exercises, include: :workout
+    end 
+
+    def create 
+        @array = []
+        params[:exerciseWorkoutArrayKey].each do |object|
+            # @workout = Workout.find_by(title: object["workoutTitle"])
+            @exercise = Exercise.create( 
+                # exercise_id: object["exerciseId"],
+                workout_id: object["workoutId"],
+                title: object["exerciseTitle"], 
+                place: object["exercisePlace"],
+                category: object["exerciseCategory"],
+                info: object["exerciseInfo"],
+                body_part: object["exerciseBodyPart"]
+            )
+            @array.push(@exercise)
+        
+        end
+        render json: @array  
     end 
     
     def create_bulk_split 
