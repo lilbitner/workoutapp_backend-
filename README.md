@@ -4,6 +4,8 @@ A full stack web application to consolidate exercise aspirations, with personall
 
 Euphoria was created as part of the Module 3 project in the Flatiron School software engineering bootcamp program. 
 
+The frontend repository can be found here: https://github.com/lilbitner/workoutapp_frontend
+
 Features: 
 
     1. Can create an account using a valid username and password. 
