@@ -2,6 +2,12 @@ What is Euphoria?
 
 A full stack web application to consolidate exercise aspirations, with personally developed workouts created based on one's goals and local weather forecast.
 
+Technologies featured: 
+1. Ruby on Rails 
+2. JavaScript
+3. HTML 
+4. CSS 
+
 Euphoria was created as part of the Module 3 project in the Flatiron School software engineering bootcamp program. 
 
 The frontend repository can be found here: https://github.com/lilbitner/workoutapp_frontend
