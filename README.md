@@ -1,6 +1,6 @@
 What is Euphoria? 
 
-A full stack web application to consolidate exercise aspirations, with personally developed workouts created based on one's goals and local weather forecast.
+A full stack web application to consolidate exercise aspirations, with personally developed workouts created based on one's goals and local weather forecast. It utilizes extensive custom controller methods and token-based authorization. 
 
 Technologies featured: 
 1. Ruby on Rails 
