@@ -1,8 +1,8 @@
-What is Euphoria? 
+#What is Euphoria? 
 
 A full stack web application to consolidate exercise aspirations, with personally developed workouts created based on one's goals and local weather forecast. It utilizes extensive custom controller methods and token-based authorization. 
 
-Technologies featured: 
+##Technologies featured: 
 1. Ruby on Rails 
 2. JavaScript
 3. HTML 
@@ -12,7 +12,7 @@ Euphoria was created as part of the Module 3 project in the Flatiron School soft
 
 The frontend repository can be found here: https://github.com/lilbitner/workoutapp_frontend
 
-Features: 
+##Features: 
 
     1. Can create an account using a valid username and password. 
     2. Can login to the created account. 
@@ -25,13 +25,13 @@ Features:
 
 ![](Euphoria.gif)
 
-Installation: 
+##Installation: 
 
 This application uses 'Rails version 6.0.2.1 - Ruby 2.6.1'.
 Fork & Clone down repository, run Bundle Install, run rails DB:create, run rails DB:seed. 
 Confirm that rails server is running on the 3000 port, and front-end server runs on 3001.
 
-Dependencies:
+##Dependencies:
 
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem "jwt", "~> 2.2"
